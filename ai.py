@@ -84,7 +84,9 @@ class AlienInvasion:
                 self.blts.remove(blt)
 
     def _update_aliens(self):
-        """Update positions of all aliens."""
+        """Check if fleet is at an edge and update
+        positions of all aliens."""
+        self._check_fleet_edges()
         self.aliens.update()
 
     def _create_fleet(self):
@@ -122,6 +124,19 @@ class AlienInvasion:
             + 2 * ali.rect.height * row_num
         )
         self.aliens.add(ali)
+
+    def _check_fleet_edges(self):
+        """Respond if aliens reache the edges."""
+        for alien in self.aliens.sprites():
+            if alien.check_edges():
+                self._change_fleet_diretion()
+                break
+
+    def _change_fleet_diretion(self):
+        """Drop fleet and change direction."""
+        for alien in self.aliens.sprites():
+            alien.rect.y += self.s.fleet_drop_speed
+        self.s.fleet_dir *= -1
 
     def _update_scr(self):
         """Update images and flip to the new screen."""
