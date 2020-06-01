@@ -35,6 +35,7 @@ class AlienInvasion:
             self._check_events()
             self.ship.update()
             self._update_blts()
+            self._update_aliens()
             self._update_scr()
 
     def _check_events(self):
