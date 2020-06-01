@@ -17,3 +17,6 @@ class Settings:
         self.blt_height = 15
         self.blt_color = (60, 60, 60)
         self.blt_allowed = 3
+
+        # Alien settings
+        self.ali_speed = 1.0
