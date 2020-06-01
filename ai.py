@@ -83,6 +83,10 @@ class AlienInvasion:
             if blt.rect.bottom <= 0:
                 self.blts.remove(blt)
 
+    def _update_aliens(self):
+        """Update positions of all aliens."""
+        self.aliens.update()
+
     def _create_fleet(self):
         """Create the fleet of aliens."""
         # Create first row of aliens
