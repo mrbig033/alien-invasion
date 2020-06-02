@@ -119,10 +119,10 @@ class AlienInvasion:
         ali_width = ali.rect.width
         ali.x = (ali_num * (ali_width * 2)) + ali_width
         ali.rect.x = ali.x
-        ali.rect.y = (  # 4
+        ali.rect.y = (
             ali.rect.height
             + 2 * ali.rect.height * row_num
-        )
+        )  # 4
         self.aliens.add(ali)
 
     def _check_fleet_edges(self):
